@@ -12,18 +12,21 @@ router.get('/', (req, res) => {
 });
 
 router.post('/api/burgers', (req, res) => {
-    burger.insertOne(['burger_name', 'devoured'], [req.body.burger_name, req.body.devoured], (result) => {
+    burger.insertOne([req.body.burger_name], (result) => {
         res.json({ id: result.insertId });
     });
 });
 
 router.put('/api/burgers/:id', (req, res) => {
-    const id = `id = ${req.params.id}`;
+    const current_id = req.params.id
+    console.log(current_id)
     burger.updateOne(
         {
-            devoured: req.body.devoured,
+            devoured: req.body.devoured
         },
-        id,
+        {
+            id: current_id
+        },
         (result) => {
             if (result.changedRows === 0) {
                 return res.status(404).end();
