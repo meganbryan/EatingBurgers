@@ -19,13 +19,12 @@ router.post('/api/burgers', (req, res) => {
 
 router.put('/api/burgers/:id', (req, res) => {
     const current_id = req.params.id
-    console.log(current_id)
     burger.updateOne(
         {
-            devoured: req.body.devoured
+            id: current_id
         },
         {
-            id: current_id
+            devoured: req.body.devoured
         },
         (result) => {
             if (result.changedRows === 0) {
