@@ -1,3 +1,4 @@
+const { query } = require('express');
 const connection = require('./connection.js');
 
 const orm = {
@@ -12,7 +13,7 @@ const orm = {
   },
 
   insertOne(burger_name, cb) {
-    let queryString = `INSERT INTO burgers set "burger_name" = ?;`;
+    let queryString = `INSERT INTO burgers SET burger_name = ?;`;
     connection.query(queryString, burger_name, (err, result) => {
       if (err) {
         throw err;
@@ -21,8 +22,8 @@ const orm = {
     });
   },
 
-  update(boolean, id, cb) {
-    let queryString = `UPDATE burgers set ? where "id" = ?;`;
+  updateOne(boolean, id, cb) {
+    let queryString = `UPDATE burgers SET ? WHERE ?;`
     connection.query(queryString, [boolean, id], (err, result) => {
       if (err) {
         throw err;
