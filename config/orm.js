@@ -1,4 +1,3 @@
-const { query } = require('express');
 const connection = require('./connection.js');
 
 const orm = {
