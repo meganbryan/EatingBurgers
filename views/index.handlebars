@@ -1,41 +1,53 @@
-<h1>Eat-Da-Burger!</h1>
+<h1 class="text-center mt-3 text-white">Eat-Da-Burger!</h1>
 
-<h2>Available</h2>
-
-<ul>
-    {{#each burgers}}
-    {{#unless devoured}}
-        <li>
-            <p>
-                {{this.id}}. {{this.burger_name}}
-                <button data-burgerid="{{this.id}}" class="devour">Devour</button>
-            </p>
-        </li>
-    {{/unless}}
-    {{/each}}
-</ul>
-
-<h2>Eaten</h2>
-
-<ul>
-    {{#each burgers}}
-    {{#if devoured}}
-        <li>
-            <p>
-                {{this.id}}. {{this.burger_name}}
-            </p>
-        </li>
-    {{/if}}
-    {{/each}}
-</ul>
-
-<h2>Add a Burger</h2>
-<form id="create-form">
-
-    <div class="form-group">
-        <label for="burger">Burger Name:</label>
-        <input type="text" id="burger" name="burger_name">
+<div class ="row">
+    <div class = "container box box-format col-5 text-center shadow-lg p-5 my-5 ml-1 rounded">
+        <h2>Available</h2>
+        <ol class="center">
+            {{#each burgers}}
+            {{#unless devoured}}
+                <li class="center">
+                    <p>
+                        {{this.burger_name}}
+                        <button data-burgerid="{{this.id}}" class="devour">Devour</button>
+                    </p>
+                </li>
+            {{/unless}}
+            {{/each}}
+        </ol>
     </div>
 
-    <button type="submit">Add Burger</button>
-</form>
+    <div class = "container box col-5 text-center shadow-lg p-5 my-5 mr-1 box-format rounded">
+        <h2>Eaten</h2>
+        <ol class="center">
+            {{#each burgers}}
+            {{#if devoured}}
+                <li class="center">
+                    <p>
+                        {{this.burger_name}}
+                    </p>
+                </li>
+            {{/if}}
+            {{/each}}
+        </ol>
+    </div>
+</div>
+
+<div class = "col-3">
+
+</div>
+<div class = "container text-center col-6 p-5 my-5 box-format ">
+    <h2>Add a Burger</h2>
+    <form id="create-form">
+
+        <div class="form-group">
+            <label for="burger">Burger Name:</label>
+            <input type="text" id="burger" name="burger_name">
+        </div>
+
+        <button type="submit" class = "mt-3 btn-primary">Add Burger</button>
+    </form>
+</div>
+<div class = "col-3">
+    
+</div>

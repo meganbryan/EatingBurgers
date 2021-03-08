@@ -1,0 +1,29 @@
+body {
+    font-family: 'Oswald', sans-serif;
+    background-color: darkcyan;
+}
+
+.center {
+    text-align: center;
+    list-style-position: outside;
+}
+
+.box-format {
+    background-color: blanchedalmond;
+    color: grey;
+    text-align: center;
+}
+
+.btn-primary {
+    color: #fffffa;
+    background-color: darkseagreen;
+    color: white;
+    border-color: #fffffa;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+    color: #333333;
+    background-color: grey;
+    color: honeydew;
+    border-color: #fffffa;
+}
