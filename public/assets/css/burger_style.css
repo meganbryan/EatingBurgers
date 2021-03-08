@@ -19,6 +19,7 @@ body {
     background-color: darkseagreen;
     color: white;
     border-color: #fffffa;
+    border-radius: 5px;
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
@@ -26,4 +27,5 @@ body {
     background-color: grey;
     color: honeydew;
     border-color: #fffffa;
+    border-radius: 5px;
 }
